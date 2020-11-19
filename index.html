@@ -88,16 +88,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Something-about"><a href="#Something-about" class="headerlink" title="Something about"></a>Something about</h2><p>一个数据集合，可以划分为train data set, validation data set, test data set.</p>
+        <h2 id="Something-about-train-validation-test"><a href="#Something-about-train-validation-test" class="headerlink" title="Something about train/validation/test"></a>Something about train/validation/test</h2><p>一个数据集合，可以划分为train data set, validation data set, test data set.</p>
 <p>1）其中train用来训练模型，比如你可以得到由10个方法SVM, linear regression, regression tree等等所对应的10个模型，并且这时候你已经对参数进行了调整，以求达到一个非常好的效果。每个model你有各自对应的10组Parameters，那么就有100个训练出来的模型。</p>
 <p>2）此时你要评估一下各自的效果，防止over fit，当然，under fit也是可以防止的，但是模型选择的时候，大家都是往精度高了的模型选择，极少出现选择under fit的模型。这个时候，帮你从100个model中选出来你认为表现最好的1个model，当然实际上你可以选择几个，当作待选的模型。并且通过train error和validation error的对比，大概可以找到那个u-shape的最低点。选择那个时候的model。</p>
 <p>3）test只用来测试模型，来看这个模型究竟有多好，就是评价这个模型的泛化能力（generalization）。 这时候，这个model在test上得到的accuracy就是一个很有代表性（representative）的accuracy，以后再在新的数据集上测试时，一般来说是跑不离这个精度的范围的。</p>
 <p>此时你通过1和2的反复使用，最终选择了几个模型，可能是完全不同的Linear，SVM，也可能是一个Linear对应的两组模型。总之，你得到了最终的几个模型，并且给出了他们的泛化能力，最终选择哪个，看决策者了。</p>
+<hr>
+<h2 id="如何偷懒撰写"><a href="#如何偷懒撰写" class="headerlink" title="如何偷懒撰写"></a>如何偷懒撰写</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line"># Clean files.</span><br><span class="line"></span><br><span class="line">$ hexo new &quot;The title of new files&quot;</span><br><span class="line"></span><br><span class="line">$ hexo generate</span><br><span class="line"># 生成</span><br><span class="line"></span><br><span class="line">$ hexo server</span><br><span class="line"># Localcost:4000 本地查看</span><br><span class="line"></span><br><span class="line">$ hexo deploy</span><br><span class="line"># 远程部署至Github</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>使用hexo n生成一个新的blog</li>
+<li>使用typora进行Markdown编辑，反正比Word好用。（如果Overleaf速度更快就好了。）</li>
+</ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/11/19/My-first-talk/" data-id="ckhoks2jk0000bcuy8fuo3iuk" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2020/11/19/My-first-talk/" data-id="ckhol4a9k0000uwuy4wj12inp" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/no-tags/" rel="tag">no tags.</a></li></ul>
@@ -149,7 +156,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/11/18/The-introduction-of-myself/" data-id="ckhoks2jv0003bcuyecebd9jc" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2020/11/18/The-introduction-of-myself/" data-id="ckhol4a9v0003uwuy8aau2b0c" class="article-share-link">Share</a>
       
       
     </footer>
