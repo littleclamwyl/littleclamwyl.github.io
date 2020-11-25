@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="机器学习中心极限定理CLT 随机变量序列部分和渐进于正态分布 1. Train&#x2F;Validation&#x2F;Test一个数据集合，可以划分为train data set, validation data set, test data set. 1）其中train用来训练模型，比如你可以得到由10个方法SVM, linear regression, regression tree等等所对应的10个模型，并">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ML_DS_1st">
+<meta property="og:url" content="http://example.com/2020/11/25/ML-DS-1st/index.html">
+<meta property="og:site_name" content="浑元形意太极门大弟子">
+<meta property="og:description" content="机器学习中心极限定理CLT 随机变量序列部分和渐进于正态分布 1. Train&#x2F;Validation&#x2F;Test一个数据集合，可以划分为train data set, validation data set, test data set. 1）其中train用来训练模型，比如你可以得到由10个方法SVM, linear regression, regression tree等等所对应的10个模型，并">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-11-25T03:10:04.000Z">
+<meta property="article:modified_time" content="2020-11-25T03:27:55.127Z">
+<meta property="article:author" content="Yulin Wang">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2020/11/25/ML-DS-1st/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>ML_DS_1st | 浑元形意太极门大弟子</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">浑元形意太极门大弟子</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">师承马保国，以武会友。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/25/ML-DS-1st/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Yulin Wang">
+      <meta itemprop="description" content="要讲武德，要努力学习。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="浑元形意太极门大弟子">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ML_DS_1st
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-11-25 11:10:04 / 修改时间：11:27:55" itemprop="dateCreated datePublished" datetime="2020-11-25T11:10:04+08:00">2020-11-25</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="机器学习"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习</h1><p>中心极限定理CLT</p>
+<p>随机变量序列部分和渐进于正态分布</p>
+<h2 id="1-Train-Validation-Test"><a href="#1-Train-Validation-Test" class="headerlink" title="1. Train/Validation/Test"></a>1. Train/Validation/Test</h2><p>一个数据集合，可以划分为train data set, validation data set, test data set.</p>
+<p>1）其中train用来训练模型，比如你可以得到由10个方法SVM, linear regression, regression tree等等所对应的10个模型，并且这时候你已经对参数进行了调整，以求达到一个非常好的效果。每个model你有各自对应的10组Parameters，那么就有100个训练出来的模型。</p>
+<p>2）此时你要评估一下各自的效果，防止over fit，当然，under fit也是可以防止的，但是模型选择的时候，大家都是往精度高了的模型选择，极少出现选择under fit的模型。这个时候，帮你从100个model中选出来你认为表现最好的1个model，当然实际上你可以选择几个，当作待选的模型。并且通过train error和validation error的对比，大概可以找到那个u-shape的最低点。选择那个时候的model。</p>
+<p>3）test只用来测试模型，来看这个模型究竟有多好，就是评价这个模型的泛化能力（generalization）。 这时候，这个model在test上得到的accuracy就是一个很有代表性（representative）的accuracy，以后再在新的数据集上测试时，一般来说是跑不离这个精度的范围的。</p>
+<p>此时你通过1和2的反复使用，最终选择了几个模型，可能是完全不同的Linear，SVM，也可能是一个Linear对应的两组模型。总之，你得到了最终的几个模型，并且给出了他们的泛化能力，最终选择哪个，看决策者了。</p>
+<h2 id="2-Introduction"><a href="#2-Introduction" class="headerlink" title="2. Introduction"></a>2. Introduction</h2><p>机器学习的分类：监督学习和非监督学习</p>
+<p>监督学习又分为：==regression==和==classification==。当然也可以分为prediction和inference两种。前者注重依靠现有数据，对将来可能发生的情况进行预测；后者注重研究哪些factor对response variable有重大影响。</p>
+<p>非监督学习：discovering clusters和discovering latent factors</p>
+<ol>
+<li>linear regression: if data is from normal distribution, since y = $w^{T}x$ + $\epsilon$ is from $N(w^{T}x, sigma^{2})$, then OLS = MLE. </li>
+</ol>
+<ol>
+<li>nonlinear regression:多项式/regression tree/kernel machines(radial basis function/logistic sigmoid)</li>
+</ol>
+<p>Note: pandas.dataframe是二维的，pandas.series是一维的</p>
+<p>由给定样本集合求解随机变量的分布密度函数问题是概率统计学的基本问题之一。解决这一问题的方法包括参数估计和非参数估计。</p>
+<p>如果反过来，就需要使用Metropolis-Hastings and Gibbs Sampling</p>
+<p>参数估计：Maximum Likelihood Estimation(MLE)</p>
+<p>非参数估计：Kernel density estimation(KDE)，由数据到分布。不平滑内核，平滑内核。</p>
+<p>一般使用高斯内核，是平滑的。</p>
+<p>平均积分平方误差的大小来确定带宽h。</p>
+<p>pdf比较平坦，则选择较大的h，反之就选择较小的h。</p>
+<h2 id="4-Classification"><a href="#4-Classification" class="headerlink" title="4. Classification"></a>4. Classification</h2><p>the type of the response variable are qualitative/categorical</p>
+<p>the method is called classification</p>
+<p>通常first predict the probability of each of the categories of a qualitative variable</p>
+<ol>
+<li>Logistic Regression</li>
+<li>Linear discriminant analysis</li>
+<li>K-nearest neightbours</li>
+</ol>
+<p>The following are computer-intensive</p>
+<ol>
+<li>Generalized Additive Models</li>
+<li>Trees</li>
+<li>SVM</li>
+</ol>
+<p>问题：依据predictor/feature，判断储户是否会default<code>逾期</code>不还欠款。</p>
+<p>X1: balance</p>
+<p>X2: income</p>
+<p>==Note:== If taking some diseases as examples,  an-made ordinal variable implies an ordering on the outcomes or predictors, </p>
+<p>and insist on the difference between some of them are equal and some are not 实际上这是不对的，人为构造顺序关系更容易引入误差</p>
+<p>$Pr(default = Yes|balance)$</p>
+<p>In fact, there is another variable income, but it seems less relative</p>
+<p>the probability for default = Yes(y = 1), if the bank is conservative, the threshold could be lower, such as threshold = 0.1</p>
+<script type="math/tex; mode=display">
+p(X) = \frac{e^{g(X)}}{1+e^{g(X)}}</script><p>Method: MLE</p>
+<p>log-odds/logit</p>
+<p>In fact, every training has an estimated coef, Std.error, Z-statistic and P-value</p>
+<p>A low P-value means we should include the predictor</p>
+<script type="math/tex; mode=display">
+log(\frac{p(X)}{1-p(X)})=\beta_{0}+\beta_{1}X_{1}+...+\beta_{p}X_{p}</script><p>其中具有2个离散值的predictors，是可以使用dummy variable的</p>
+<p>==Note==那么具有多个离散值的predictors呢？</p>
+<p>很经典的问题，如果考虑是否具有student这个身份。同等balance情况下，student不会default。但是总体来说student和balance正相关，student往往具有更高的balance因而更容易default</p>
+<p>2 Response Classes</p>
+<h3 id="4-2-LDA"><a href="#4-2-LDA" class="headerlink" title="4.2 LDA"></a>4.2 LDA</h3><ol>
+<li>当数据实际well-separated时，LR不稳定</li>
+<li>样本量小的时候，X is approximately normal in each of the classes, LDA更稳定</li>
+<li>在More classes表现更好</li>
+</ol>
+<script type="math/tex; mode=display">
+f_{k}(X) = Pr(X=x|Y=k)\\
+Pr(Y=k|X=x) = \frac{\pi_{k}f_{k}(x)}{\sum_{l=1}^{K}\pi_{l}f_{l}(x)}</script><p>$\pi_{k}$=k类样本数量/总样本数</p>
+<h1 id="算法和他们的目的"><a href="#算法和他们的目的" class="headerlink" title="算法和他们的目的"></a>算法和他们的目的</h1><h3 id="1-EM-Expectation-and-Maximum"><a href="#1-EM-Expectation-and-Maximum" class="headerlink" title="1. EM(Expectation and Maximum)"></a>1. EM(Expectation and Maximum)</h3><p>估计参数值</p>
+<ol>
+<li>求期望</li>
+<li>期望最大</li>
+<li>重复上述两步直至收敛</li>
+</ol>
+<h3 id="2-MLE-Maximum-Likelihood-Estimate"><a href="#2-MLE-Maximum-Likelihood-Estimate" class="headerlink" title="2. MLE(Maximum Likelihood Estimate)"></a>2. MLE(Maximum Likelihood Estimate)</h3><p>估计参数值</p>
+<ol>
+<li>写出似然函数</li>
+<li>求出使似然函数最大的参数取值</li>
+</ol>
+<h3 id="3-HMM-Hidden-Markov-Model"><a href="#3-HMM-Hidden-Markov-Model" class="headerlink" title="3. HMM(Hidden Markov Model)"></a>3. HMM(Hidden Markov Model)</h3><p>求概率</p>
+<ol>
+<li>状态序列</li>
+<li>观测序列</li>
+</ol>
+<h3 id="4-MICE-Multiple-Imputation-and-Chained-Equations"><a href="#4-MICE-Multiple-Imputation-and-Chained-Equations" class="headerlink" title="4. MICE(Multiple Imputation and Chained Equations)"></a>4. MICE(Multiple Imputation and Chained Equations)</h3><p>填补缺失值</p>
+<ol>
+<li>impute</li>
+<li>analyse</li>
+<li>pool</li>
+</ol>
+<h3 id="5-Metropolis-Hastings-amp-Gibbs-Sampling"><a href="#5-Metropolis-Hastings-amp-Gibbs-Sampling" class="headerlink" title="5. Metropolis Hastings &amp; Gibbs Sampling"></a>5. Metropolis Hastings &amp; Gibbs Sampling</h3><p>已知函数分布，从中进行采样。</p>
+<h3 id="6-KDE-Kernel-Density-Estimation"><a href="#6-KDE-Kernel-Density-Estimation" class="headerlink" title="6. KDE(Kernel Density Estimation)"></a>6. KDE(Kernel Density Estimation)</h3><p>估计样本分布</p>
+<h3 id="7-退火SA-爬山CH"><a href="#7-退火SA-爬山CH" class="headerlink" title="7. 退火SA/爬山CH"></a>7. 退火SA/爬山CH</h3><h3 id="8-梯度下降且采用一阶导数-Gradient-Descent-GD采用二阶导数-Newton-Raphson"><a href="#8-梯度下降且采用一阶导数-Gradient-Descent-GD采用二阶导数-Newton-Raphson" class="headerlink" title="8. 梯度下降且采用一阶导数 Gradient Descent/GD采用二阶导数 Newton-Raphson"></a>8. 梯度下降且采用一阶导数 Gradient Descent/GD采用二阶导数 Newton-Raphson</h3><h1 id="数据结构-（小甲鱼B站网课）"><a href="#数据结构-（小甲鱼B站网课）" class="headerlink" title="数据结构 （小甲鱼B站网课）"></a>数据结构 （小甲鱼B站网课）</h1><h2 id="1-绪论：数据的概念-逻辑结构与物理结构"><a href="#1-绪论：数据的概念-逻辑结构与物理结构" class="headerlink" title="1. 绪论：数据的概念/逻辑结构与物理结构"></a>1. 绪论：数据的概念/逻辑结构与物理结构</h2><ol>
+<li><p>逻辑结构：集合结构/线性结构/树形结构/图形结构</p>
+</li>
+<li><p>物理结构：顺序存储结构 vs. 链式存储结构</p>
+</li>
+</ol>
+<h2 id="2-算法-时间复杂度与空间复杂度"><a href="#2-算法-时间复杂度与空间复杂度" class="headerlink" title="2. 算法/时间复杂度与空间复杂度"></a>2. 算法/时间复杂度与空间复杂度</h2><p>算法：解决特定问题求解步骤的描述</p>
+<p>算法的特性：输入，输出，有穷性，确定性，可行性</p>
+<p>时间复杂度—比较容易理解:</p>
+<script type="math/tex; mode=display">
+O(1) constant\\
+
+O(n) power \\
+
+O(log_{10}n) logarithm</script><p>线性表，顺序存储结构。</p>
+<p>链式存储结构。 数据域，指针域。相比较于线性表，减少了增删的时间复杂度，增加了查询的时间复杂度。</p>
+<h2 id="3-线性表：顺序存储-链式存储：单链表（着重）、循环链表、静态链表、双向链表"><a href="#3-线性表：顺序存储-链式存储：单链表（着重）、循环链表、静态链表、双向链表" class="headerlink" title="3. 线性表：顺序存储/链式存储：单链表（着重）、循环链表、静态链表、双向链表"></a>3. 线性表：顺序存储/链式存储：单链表（着重）、循环链表、静态链表、双向链表</h2><h2 id="4-栈（顺序与链式）：先进后出-队列（顺序与循环）：先进先出"><a href="#4-栈（顺序与链式）：先进后出-队列（顺序与循环）：先进先出" class="headerlink" title="4. 栈（顺序与链式）：先进后出/队列（顺序与循环）：先进先出"></a>4. 栈（顺序与链式）：先进后出/队列（顺序与循环）：先进先出</h2><h2 id="5-串-简单的模式匹配-KMP算法"><a href="#5-串-简单的模式匹配-KMP算法" class="headerlink" title="5. 串/简单的模式匹配/KMP算法"></a>5. 串/简单的模式匹配/KMP算法</h2><h2 id="6-树"><a href="#6-树" class="headerlink" title="6. 树"></a>6. 树</h2><p>一些概念：</p>
+<p>度degree/深度depth/有序性和无序性</p>
+<p>存储结构用顺序存储比较困难。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">graph TD</span><br><span class="line"></span><br><span class="line">树的存储结构 --&gt; 双亲表示法</span><br><span class="line">树的存储结构 --&gt; 孩子表示法</span><br><span class="line">树的存储结构 --&gt; 兄弟表示法</span><br><span class="line">兄弟表示法 --&gt; 二叉树的概念</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>二叉树是有序的。</p>
+<p>二叉树的存储结构。</p>
+<p>因为二叉树比较特殊，所以使用顺序存储也有了可能。</p>
+<p>遍历二叉树。</p>
+<p>前序遍历/中序遍历/后序遍历/层序遍历</p>
+<p>前三种遍历方式，本质上也是一种递归。</p>
+<p>print/访问左节点/访问右节点。这是前序遍历</p>
+<p>访问左节点，print，访问右节点，这是中序。</p>
+<p>访问左节点，访问右节点，print，这是后序遍历。</p>
+<p>那么二叉树的建立，就可以参照他的遍历方式。只不过把print变成赋值。</p>
+<p>树，森林，二叉树的转换。</p>
+<p>赫夫曼树：带权路径长度WPL最小的二叉树。 weighted path length?</p>
+<p>树的路径长度，权重</p>
+<p>赫夫曼编码</p>
+<h2 id="7-图"><a href="#7-图" class="headerlink" title="7. 图"></a>7. 图</h2><h2 id="9-排序算法"><a href="#9-排序算法" class="headerlink" title="9. 排序算法"></a>9. 排序算法</h2><ol>
+<li>冒泡排序</li>
+<li>简单选择排序</li>
+<li>直接插入排序</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/11/25/EDA-1st/" rel="prev" title="EDA_1st">
+      <i class="fa fa-chevron-left"></i> EDA_1st
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0"><span class="nav-number">1.</span> <span class="nav-text">机器学习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Train-Validation-Test"><span class="nav-number">1.1.</span> <span class="nav-text">1. Train&#x2F;Validation&#x2F;Test</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Introduction"><span class="nav-number">1.2.</span> <span class="nav-text">2. Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Classification"><span class="nav-number">1.3.</span> <span class="nav-text">4. Classification</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-LDA"><span class="nav-number">1.3.1.</span> <span class="nav-text">4.2 LDA</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E5%92%8C%E4%BB%96%E4%BB%AC%E7%9A%84%E7%9B%AE%E7%9A%84"><span class="nav-number">2.</span> <span class="nav-text">算法和他们的目的</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-EM-Expectation-and-Maximum"><span class="nav-number">2.0.1.</span> <span class="nav-text">1. EM(Expectation and Maximum)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-MLE-Maximum-Likelihood-Estimate"><span class="nav-number">2.0.2.</span> <span class="nav-text">2. MLE(Maximum Likelihood Estimate)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-HMM-Hidden-Markov-Model"><span class="nav-number">2.0.3.</span> <span class="nav-text">3. HMM(Hidden Markov Model)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-MICE-Multiple-Imputation-and-Chained-Equations"><span class="nav-number">2.0.4.</span> <span class="nav-text">4. MICE(Multiple Imputation and Chained Equations)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-Metropolis-Hastings-amp-Gibbs-Sampling"><span class="nav-number">2.0.5.</span> <span class="nav-text">5. Metropolis Hastings &amp; Gibbs Sampling</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-KDE-Kernel-Density-Estimation"><span class="nav-number">2.0.6.</span> <span class="nav-text">6. KDE(Kernel Density Estimation)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-%E9%80%80%E7%81%ABSA-%E7%88%AC%E5%B1%B1CH"><span class="nav-number">2.0.7.</span> <span class="nav-text">7. 退火SA&#x2F;爬山CH</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E4%B8%94%E9%87%87%E7%94%A8%E4%B8%80%E9%98%B6%E5%AF%BC%E6%95%B0-Gradient-Descent-GD%E9%87%87%E7%94%A8%E4%BA%8C%E9%98%B6%E5%AF%BC%E6%95%B0-Newton-Raphson"><span class="nav-number">2.0.8.</span> <span class="nav-text">8. 梯度下降且采用一阶导数 Gradient Descent&#x2F;GD采用二阶导数 Newton-Raphson</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%EF%BC%88%E5%B0%8F%E7%94%B2%E9%B1%BCB%E7%AB%99%E7%BD%91%E8%AF%BE%EF%BC%89"><span class="nav-number">3.</span> <span class="nav-text">数据结构 （小甲鱼B站网课）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E7%BB%AA%E8%AE%BA%EF%BC%9A%E6%95%B0%E6%8D%AE%E7%9A%84%E6%A6%82%E5%BF%B5-%E9%80%BB%E8%BE%91%E7%BB%93%E6%9E%84%E4%B8%8E%E7%89%A9%E7%90%86%E7%BB%93%E6%9E%84"><span class="nav-number">3.1.</span> <span class="nav-text">1. 绪论：数据的概念&#x2F;逻辑结构与物理结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E7%AE%97%E6%B3%95-%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%8E%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="nav-number">3.2.</span> <span class="nav-text">2. 算法&#x2F;时间复杂度与空间复杂度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E7%BA%BF%E6%80%A7%E8%A1%A8%EF%BC%9A%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8-%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%EF%BC%9A%E5%8D%95%E9%93%BE%E8%A1%A8%EF%BC%88%E7%9D%80%E9%87%8D%EF%BC%89%E3%80%81%E5%BE%AA%E7%8E%AF%E9%93%BE%E8%A1%A8%E3%80%81%E9%9D%99%E6%80%81%E9%93%BE%E8%A1%A8%E3%80%81%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8"><span class="nav-number">3.3.</span> <span class="nav-text">3. 线性表：顺序存储&#x2F;链式存储：单链表（着重）、循环链表、静态链表、双向链表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E6%A0%88%EF%BC%88%E9%A1%BA%E5%BA%8F%E4%B8%8E%E9%93%BE%E5%BC%8F%EF%BC%89%EF%BC%9A%E5%85%88%E8%BF%9B%E5%90%8E%E5%87%BA-%E9%98%9F%E5%88%97%EF%BC%88%E9%A1%BA%E5%BA%8F%E4%B8%8E%E5%BE%AA%E7%8E%AF%EF%BC%89%EF%BC%9A%E5%85%88%E8%BF%9B%E5%85%88%E5%87%BA"><span class="nav-number">3.4.</span> <span class="nav-text">4. 栈（顺序与链式）：先进后出&#x2F;队列（顺序与循环）：先进先出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E4%B8%B2-%E7%AE%80%E5%8D%95%E7%9A%84%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D-KMP%E7%AE%97%E6%B3%95"><span class="nav-number">3.5.</span> <span class="nav-text">5. 串&#x2F;简单的模式匹配&#x2F;KMP算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E6%A0%91"><span class="nav-number">3.6.</span> <span class="nav-text">6. 树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-%E5%9B%BE"><span class="nav-number">3.7.</span> <span class="nav-text">7. 图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95"><span class="nav-number">3.8.</span> <span class="nav-text">9. 排序算法</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Yulin Wang</p>
+  <div class="site-description" itemprop="description">要讲武德，要努力学习。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yulin Wang</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>
