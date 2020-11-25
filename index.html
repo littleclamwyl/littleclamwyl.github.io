@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta name="description" content="要讲武德，要努力学习。">
@@ -148,7 +148,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/25/ML-DS-1st/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/25/Machine-Learning-Data-Structure-1st/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -162,7 +162,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/11/25/ML-DS-1st/" class="post-title-link" itemprop="url">ML_DS_1st</a>
+            <a href="/2020/11/25/Machine-Learning-Data-Structure-1st/" class="post-title-link" itemprop="url">Machine Learning Data Structure</a>
         </h2>
 
         <div class="post-meta">
@@ -173,7 +173,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-11-25 11:10:04 / 修改时间：11:27:55" itemprop="dateCreated datePublished" datetime="2020-11-25T11:10:04+08:00">2020-11-25</time>
+              <time title="创建时间：2020-11-25 11:10:04 / 修改时间：14:26:55" itemprop="dateCreated datePublished" datetime="2020-11-25T11:10:04+08:00">2020-11-25</time>
             </span>
 
           
@@ -187,7 +187,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="机器学习"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习</h1><p>中心极限定理CLT</p>
+          <h1 id="一、机器学习"><a href="#一、机器学习" class="headerlink" title="一、机器学习"></a>一、机器学习</h1><p>中心极限定理CLT</p>
 <p>随机变量序列部分和渐进于正态分布</p>
 <h2 id="1-Train-Validation-Test"><a href="#1-Train-Validation-Test" class="headerlink" title="1. Train/Validation/Test"></a>1. Train/Validation/Test</h2><p>一个数据集合，可以划分为train data set, validation data set, test data set.</p>
 <p>1）其中train用来训练模型，比如你可以得到由10个方法SVM, linear regression, regression tree等等所对应的10个模型，并且这时候你已经对参数进行了调整，以求达到一个非常好的效果。每个model你有各自对应的10组Parameters，那么就有100个训练出来的模型。</p>
@@ -198,7 +198,7 @@
 <p>监督学习又分为：==regression==和==classification==。当然也可以分为prediction和inference两种。前者注重依靠现有数据，对将来可能发生的情况进行预测；后者注重研究哪些factor对response variable有重大影响。</p>
 <p>非监督学习：discovering clusters和discovering latent factors</p>
 <ol>
-<li>linear regression: if data is from normal distribution, since y = $w^{T}x$ + $\epsilon$ is from $N(w^{T}x, sigma^{2})$, then OLS = MLE. </li>
+<li>linear regression: if data is from normal distribution, since y = $w^{T}x$ + $\epsilon$ is from $N(w^{T}x, \sigma^{2})$, then OLS = MLE. </li>
 </ol>
 <ol>
 <li>nonlinear regression:多项式/regression tree/kernel machines(radial basis function/logistic sigmoid)</li>
@@ -251,7 +251,7 @@ log(\frac{p(X)}{1-p(X)})=\beta_{0}+\beta_{1}X_{1}+...+\beta_{p}X_{p}</script><p>
 <script type="math/tex; mode=display">
 f_{k}(X) = Pr(X=x|Y=k)\\
 Pr(Y=k|X=x) = \frac{\pi_{k}f_{k}(x)}{\sum_{l=1}^{K}\pi_{l}f_{l}(x)}</script><p>$\pi_{k}$=k类样本数量/总样本数</p>
-<h1 id="算法和他们的目的"><a href="#算法和他们的目的" class="headerlink" title="算法和他们的目的"></a>算法和他们的目的</h1><h3 id="1-EM-Expectation-and-Maximum"><a href="#1-EM-Expectation-and-Maximum" class="headerlink" title="1. EM(Expectation and Maximum)"></a>1. EM(Expectation and Maximum)</h3><p>估计参数值</p>
+<h1 id="二、-算法和他们的目的"><a href="#二、-算法和他们的目的" class="headerlink" title="二、 算法和他们的目的"></a>二、 算法和他们的目的</h1><h3 id="1-EM-Expectation-and-Maximum"><a href="#1-EM-Expectation-and-Maximum" class="headerlink" title="1. EM(Expectation and Maximum)"></a>1. EM(Expectation and Maximum)</h3><p>估计参数值</p>
 <ol>
 <li>求期望</li>
 <li>期望最大</li>
@@ -275,7 +275,7 @@ Pr(Y=k|X=x) = \frac{\pi_{k}f_{k}(x)}{\sum_{l=1}^{K}\pi_{l}f_{l}(x)}</script><p>$
 </ol>
 <h3 id="5-Metropolis-Hastings-amp-Gibbs-Sampling"><a href="#5-Metropolis-Hastings-amp-Gibbs-Sampling" class="headerlink" title="5. Metropolis Hastings &amp; Gibbs Sampling"></a>5. Metropolis Hastings &amp; Gibbs Sampling</h3><p>已知函数分布，从中进行采样。</p>
 <h3 id="6-KDE-Kernel-Density-Estimation"><a href="#6-KDE-Kernel-Density-Estimation" class="headerlink" title="6. KDE(Kernel Density Estimation)"></a>6. KDE(Kernel Density Estimation)</h3><p>估计样本分布</p>
-<h3 id="7-退火SA-爬山CH"><a href="#7-退火SA-爬山CH" class="headerlink" title="7. 退火SA/爬山CH"></a>7. 退火SA/爬山CH</h3><h3 id="8-梯度下降且采用一阶导数-Gradient-Descent-GD采用二阶导数-Newton-Raphson"><a href="#8-梯度下降且采用一阶导数-Gradient-Descent-GD采用二阶导数-Newton-Raphson" class="headerlink" title="8. 梯度下降且采用一阶导数 Gradient Descent/GD采用二阶导数 Newton-Raphson"></a>8. 梯度下降且采用一阶导数 Gradient Descent/GD采用二阶导数 Newton-Raphson</h3><h1 id="数据结构-（小甲鱼B站网课）"><a href="#数据结构-（小甲鱼B站网课）" class="headerlink" title="数据结构 （小甲鱼B站网课）"></a>数据结构 （小甲鱼B站网课）</h1><h2 id="1-绪论：数据的概念-逻辑结构与物理结构"><a href="#1-绪论：数据的概念-逻辑结构与物理结构" class="headerlink" title="1. 绪论：数据的概念/逻辑结构与物理结构"></a>1. 绪论：数据的概念/逻辑结构与物理结构</h2><ol>
+<h3 id="7-退火SA-爬山CH"><a href="#7-退火SA-爬山CH" class="headerlink" title="7. 退火SA/爬山CH"></a>7. 退火SA/爬山CH</h3><h3 id="8-梯度下降且采用一阶导数-Gradient-Descent-GD采用二阶导数-Newton-Raphson"><a href="#8-梯度下降且采用一阶导数-Gradient-Descent-GD采用二阶导数-Newton-Raphson" class="headerlink" title="8. 梯度下降且采用一阶导数 Gradient Descent/GD采用二阶导数 Newton-Raphson"></a>8. 梯度下降且采用一阶导数 Gradient Descent/GD采用二阶导数 Newton-Raphson</h3><h1 id="三、数据结构"><a href="#三、数据结构" class="headerlink" title="三、数据结构"></a>三、数据结构</h1><h2 id="1-绪论：数据的概念-逻辑结构与物理结构"><a href="#1-绪论：数据的概念-逻辑结构与物理结构" class="headerlink" title="1. 绪论：数据的概念/逻辑结构与物理结构"></a>1. 绪论：数据的概念/逻辑结构与物理结构</h2><ol>
 <li><p>逻辑结构：集合结构/线性结构/树形结构/图形结构</p>
 </li>
 <li><p>物理结构：顺序存储结构 vs. 链式存储结构</p>
@@ -284,12 +284,15 @@ Pr(Y=k|X=x) = \frac{\pi_{k}f_{k}(x)}{\sum_{l=1}^{K}\pi_{l}f_{l}(x)}</script><p>$
 <h2 id="2-算法-时间复杂度与空间复杂度"><a href="#2-算法-时间复杂度与空间复杂度" class="headerlink" title="2. 算法/时间复杂度与空间复杂度"></a>2. 算法/时间复杂度与空间复杂度</h2><p>算法：解决特定问题求解步骤的描述</p>
 <p>算法的特性：输入，输出，有穷性，确定性，可行性</p>
 <p>时间复杂度—比较容易理解:</p>
-<script type="math/tex; mode=display">
-O(1) constant\\
-
-O(n) power \\
-
-O(log_{10}n) logarithm</script><p>线性表，顺序存储结构。</p>
+<ol>
+<li><p>$O(1)$ constant​</p>
+</li>
+<li><p>$O(n)$ power </p>
+</li>
+<li><p>$O(log_{10}n)$ logarithm</p>
+</li>
+</ol>
+<p>线性表，顺序存储结构。</p>
 <p>链式存储结构。 数据域，指针域。相比较于线性表，减少了增删的时间复杂度，增加了查询的时间复杂度。</p>
 <h2 id="3-线性表：顺序存储-链式存储：单链表（着重）、循环链表、静态链表、双向链表"><a href="#3-线性表：顺序存储-链式存储：单链表（着重）、循环链表、静态链表、双向链表" class="headerlink" title="3. 线性表：顺序存储/链式存储：单链表（着重）、循环链表、静态链表、双向链表"></a>3. 线性表：顺序存储/链式存储：单链表（着重）、循环链表、静态链表、双向链表</h2><h2 id="4-栈（顺序与链式）：先进后出-队列（顺序与循环）：先进先出"><a href="#4-栈（顺序与链式）：先进后出-队列（顺序与循环）：先进先出" class="headerlink" title="4. 栈（顺序与链式）：先进后出/队列（顺序与循环）：先进先出"></a>4. 栈（顺序与链式）：先进后出/队列（顺序与循环）：先进先出</h2><h2 id="5-串-简单的模式匹配-KMP算法"><a href="#5-串-简单的模式匹配-KMP算法" class="headerlink" title="5. 串/简单的模式匹配/KMP算法"></a>5. 串/简单的模式匹配/KMP算法</h2><h2 id="6-树"><a href="#6-树" class="headerlink" title="6. 树"></a>6. 树</h2><p>一些概念：</p>
 <p>度degree/深度depth/有序性和无序性</p>
@@ -333,7 +336,7 @@ O(log_{10}n) logarithm</script><p>线性表，顺序存储结构。</p>
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/25/EDA-1st/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/25/Exploratory-Data-Analysis-1st/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -347,7 +350,7 @@ O(log_{10}n) logarithm</script><p>线性表，顺序存储结构。</p>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/11/25/EDA-1st/" class="post-title-link" itemprop="url">EDA_1st</a>
+            <a href="/2020/11/25/Exploratory-Data-Analysis-1st/" class="post-title-link" itemprop="url">Exploratory Data Analysis</a>
         </h2>
 
         <div class="post-meta">
@@ -358,7 +361,7 @@ O(log_{10}n) logarithm</script><p>线性表，顺序存储结构。</p>
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-11-25 11:09:52 / 修改时间：11:27:47" itemprop="dateCreated datePublished" datetime="2020-11-25T11:09:52+08:00">2020-11-25</time>
+              <time title="创建时间：2020-11-25 11:09:52 / 修改时间：14:24:28" itemprop="dateCreated datePublished" datetime="2020-11-25T11:09:52+08:00">2020-11-25</time>
             </span>
 
           
@@ -444,7 +447,7 @@ O(log_{10}n) logarithm</script><p>线性表，顺序存储结构。</p>
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/19/My-first-talk/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/19/My-First-Talk/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -458,7 +461,7 @@ O(log_{10}n) logarithm</script><p>线性表，顺序存储结构。</p>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/11/19/My-first-talk/" class="post-title-link" itemprop="url">My first blog</a>
+            <a href="/2020/11/19/My-First-Talk/" class="post-title-link" itemprop="url">My first blog</a>
         </h2>
 
         <div class="post-meta">
@@ -467,10 +470,16 @@ O(log_{10}n) logarithm</script><p>线性表，顺序存储结构。</p>
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-11-19 15:24:07 / 修改时间：16:40:18" itemprop="dateCreated datePublished" datetime="2020-11-19T15:24:07+08:00">2020-11-19</time>
+              <time title="创建时间：2020-11-19 15:24:07" itemprop="dateCreated datePublished" datetime="2020-11-19T15:24:07+08:00">2020-11-19</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-25 14:22:18" itemprop="dateModified" datetime="2020-11-25T14:22:18+08:00">2020-11-25</time>
+              </span>
 
           
 
@@ -483,16 +492,10 @@ O(log_{10}n) logarithm</script><p>线性表，顺序存储结构。</p>
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="Something-about-train-validation-test"><a href="#Something-about-train-validation-test" class="headerlink" title="Something about train/validation/test"></a>Something about train/validation/test</h2><p>一个数据集合，可以划分为train data set, validation data set, test data set.</p>
-<p>1）其中train用来训练模型，比如你可以得到由10个方法SVM, linear regression, regression tree等等所对应的10个模型，并且这时候你已经对参数进行了调整，以求达到一个非常好的效果。每个model你有各自对应的10组Parameters，那么就有100个训练出来的模型。</p>
-<p>2）此时你要评估一下各自的效果，防止over fit，当然，under fit也是可以防止的，但是模型选择的时候，大家都是往精度高了的模型选择，极少出现选择under fit的模型。这个时候，帮你从100个model中选出来你认为表现最好的1个model，当然实际上你可以选择几个，当作待选的模型。并且通过train error和validation error的对比，大概可以找到那个u-shape的最低点。选择那个时候的model。</p>
-<p>3）test只用来测试模型，来看这个模型究竟有多好，就是评价这个模型的泛化能力（generalization）。 这时候，这个model在test上得到的accuracy就是一个很有代表性（representative）的accuracy，以后再在新的数据集上测试时，一般来说是跑不离这个精度的范围的。</p>
-<p>此时你通过1和2的反复使用，最终选择了几个模型，可能是完全不同的Linear，SVM，也可能是一个Linear对应的两组模型。总之，你得到了最终的几个模型，并且给出了他们的泛化能力，最终选择哪个，看决策者了。</p>
-<hr>
-<h2 id="如何偷懒撰写"><a href="#如何偷懒撰写" class="headerlink" title="如何偷懒撰写"></a>如何偷懒撰写</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line"># Clean files.</span><br><span class="line"></span><br><span class="line">$ hexo new &quot;The title of new files&quot;</span><br><span class="line"></span><br><span class="line">$ hexo generate</span><br><span class="line"># 生成</span><br><span class="line"></span><br><span class="line">$ hexo server</span><br><span class="line"># Localcost:4000 本地查看</span><br><span class="line"></span><br><span class="line">$ hexo deploy</span><br><span class="line"># 远程部署至Github</span><br></pre></td></tr></table></figure>
+          <h2 id="如何撰写一篇Markdown"><a href="#如何撰写一篇Markdown" class="headerlink" title="如何撰写一篇Markdown"></a>如何撰写一篇Markdown</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line"># Clean files.</span><br><span class="line"></span><br><span class="line">$ hexo new &quot;The title of new files&quot;</span><br><span class="line"></span><br><span class="line">$ hexo generate</span><br><span class="line"># 生成</span><br><span class="line"></span><br><span class="line">$ hexo server</span><br><span class="line"># Localcost:4000 本地查看</span><br><span class="line"></span><br><span class="line">$ hexo deploy</span><br><span class="line"># 远程部署至Github</span><br></pre></td></tr></table></figure>
 <ol>
-<li>使用hexo n生成一个新的blog</li>
-<li>使用typora进行Markdown编辑，反正比Word好用。（如果Overleaf速度更快就好了。）</li>
+<li>使用hexo n “Name of Your New Document”</li>
+<li>使用typora进行Markdown编辑，反正比Word好用。</li>
 </ol>
 
       
@@ -513,7 +516,7 @@ O(log_{10}n) logarithm</script><p>线性表，顺序存储结构。</p>
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/18/The-introduction-of-myself/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/18/The-Introduction-of-Myself/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -527,7 +530,7 @@ O(log_{10}n) logarithm</script><p>线性表，顺序存储结构。</p>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/11/18/The-introduction-of-myself/" class="post-title-link" itemprop="url">Welcome to my personal CV github.</a>
+            <a href="/2020/11/18/The-Introduction-of-Myself/" class="post-title-link" itemprop="url">Welcome to my personal CV github.</a>
         </h2>
 
         <div class="post-meta">
@@ -544,7 +547,7 @@ O(log_{10}n) logarithm</script><p>线性表，顺序存储结构。</p>
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-11-25 11:13:13" itemprop="dateModified" datetime="2020-11-25T11:13:13+08:00">2020-11-25</time>
+                <time title="修改时间：2020-11-25 14:20:11" itemprop="dateModified" datetime="2020-11-25T14:20:11+08:00">2020-11-25</time>
               </span>
 
           
@@ -560,14 +563,10 @@ O(log_{10}n) logarithm</script><p>线性表，顺序存储结构。</p>
       
           <p>我拥有的技能：还是数学有意思，但是上升到测度论就打扰了。</p>
 <p>我喜欢的课程：Statistics and Machine Learning.</p>
-<h2 id="掌握的杂七杂八的技能已经一些课程。"><a href="#掌握的杂七杂八的技能已经一些课程。" class="headerlink" title="掌握的杂七杂八的技能已经一些课程。"></a>掌握的杂七杂八的技能已经一些课程。</h2><h3 id="Bayesian-Theory-and-Some-Algorithm"><a href="#Bayesian-Theory-and-Some-Algorithm" class="headerlink" title="Bayesian Theory and Some Algorithm."></a>Bayesian Theory and Some Algorithm.</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">1. Metropolis Hastings and Gibbs Sampling</span><br><span class="line">2. Simulated Annealing</span><br><span class="line">3. Climbing Hills</span><br><span class="line">4. Hidden Markov Model</span><br><span class="line">5. For Regression Trees:</span><br><span class="line">        1) ID 3</span><br><span class="line">        2) C4.5</span><br><span class="line">        3) CART</span><br><span class="line">6. Linear Regression and Nonlinear(especially <span class="keyword">for</span> the Basis Function Expansions),</span><br><span class="line">some common models are like RBF(Radial) and Kernel Tricks.</span><br><span class="line">7. SVM(Support Vector Machines). Project low dimensions to high dimension.</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h2 id="掌握的杂七杂八的技能以及一些课程。"><a href="#掌握的杂七杂八的技能以及一些课程。" class="headerlink" title="掌握的杂七杂八的技能以及一些课程。"></a>掌握的杂七杂八的技能以及一些课程。</h2><h3 id="Bayesian-Theory-and-Some-Algorithm"><a href="#Bayesian-Theory-and-Some-Algorithm" class="headerlink" title="Bayesian Theory and Some Algorithm."></a>Bayesian Theory and Some Algorithm.</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">1. Metropolis Hastings and Gibbs Sampling</span><br><span class="line">2. Simulated Annealing</span><br><span class="line">3. Climbing Hills</span><br><span class="line">4. Hidden Markov Model</span><br><span class="line">5. For Regression Trees:</span><br><span class="line">        1) ID 3</span><br><span class="line">        2) C4.5</span><br><span class="line">        3) CART</span><br><span class="line">6. Linear Regression and Nonlinear(especially <span class="keyword">for</span> the Basis Function Expansions),</span><br><span class="line">some common models are like RBF(Radial) and Kernel Tricks.</span><br><span class="line">7. SVM(Support Vector Machines). Project low dimensions to high dimension.</span><br></pre></td></tr></table></figure>
 <h3 id="Codes-ability"><a href="#Codes-ability" class="headerlink" title="Codes ability"></a>Codes ability</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1. Python(Pycharm, Jupyter and Spyder) Anaconda. </span><br><span class="line">        1) NLP: nltk </span><br><span class="line">        2) ML: scikit-learn</span><br><span class="line">        3) Computer Vision: OpenCV</span><br><span class="line">2. R Language: visualization and Rmarkdown(I really love it.)</span><br><span class="line">3. C(Codeblocks)</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
 <h3 id="Something-useful"><a href="#Something-useful" class="headerlink" title="Something useful?"></a>Something useful?</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. Github and Git</span><br><span class="line">2. Typora <span class="keyword">for</span> Markdown</span><br><span class="line">3. Link Github and hexo (node.js)</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
 <h3 id="Language-ability"><a href="#Language-ability" class="headerlink" title="Language ability"></a>Language ability</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">English: IELTS 7.0; GRE 320; CET 6 567</span><br><span class="line">Chinese: weibo 冲浪高手</span><br><span class="line">Janpanes: ...</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 
       
     </div>
@@ -653,10 +652,6 @@ O(log_{10}n) logarithm</script><p>线性表，顺序存储结构。</p>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
-      <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">1</span>
-        <span class="site-state-item-name">标签</span>
-      </div>
   </nav>
 </div>
 
@@ -687,7 +682,7 @@ O(log_{10}n) logarithm</script><p>线性表，顺序存储结构。</p>
   </span>
   <span class="author" itemprop="copyrightHolder">Yulin Wang</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
 
         
@@ -713,7 +708,7 @@ O(log_{10}n) logarithm</script><p>线性表，顺序存储结构。</p>
 <script src="/js/motion.js"></script>
 
 
-<script src="/js/schemes/muse.js"></script>
+<script src="/js/schemes/pisces.js"></script>
 
 
 <script src="/js/next-boot.js"></script>
