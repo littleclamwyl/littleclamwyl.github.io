@@ -179,7 +179,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-12-03 15:09:16" itemprop="dateModified" datetime="2020-12-03T15:09:16+08:00">2020-12-03</time>
+                <time title="修改时间：2020-12-03 16:11:50" itemprop="dateModified" datetime="2020-12-03T16:11:50+08:00">2020-12-03</time>
               </span>
 
           
@@ -240,8 +240,12 @@
 <li>自增变量/自减【循环体内计数变量】，否则会死循环</li>
 </ol>
 <p>特点：循环的次数不确定，是依靠循环条件结束。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">while 条件表达式:</span><br><span class="line">    ...</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">for ... in 集合对象:    </span><br><span class="line">    </span><br><span class="line">  </span><br></pre></td></tr></table></figure>
-<h3 id="三、-for"><a href="#三、-for" class="headerlink" title="三、 for"></a>三、 for</h3><h3 id="四、-break-continue"><a href="#四、-break-continue" class="headerlink" title="四、 break, continue"></a>四、 break, continue</h3><h3 id="五、-多条件和短路"><a href="#五、-多条件和短路" class="headerlink" title="五、 多条件和短路"></a>五、 多条件和短路</h3><h2 id="3-Python-数据结构"><a href="#3-Python-数据结构" class="headerlink" title="3. Python 数据结构"></a>3. Python 数据结构</h2><p>Python数据类型：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> 条件表达式:</span><br><span class="line">   ...</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#例子</span></span><br><span class="line">i = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> i &lt;= <span class="number">5</span>:</span><br><span class="line">    print(<span class="string">&quot;此次输出的是: %s&quot;</span> %(i))</span><br><span class="line">    i = i+<span class="number">1</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line">&gt;&gt;此次输出的是: <span class="number">0</span></span><br><span class="line">&gt;&gt;此次输出的是: <span class="number">1</span></span><br><span class="line">&gt;&gt;此次输出的是: <span class="number">2</span></span><br><span class="line">&gt;&gt;此次输出的是: <span class="number">3</span></span><br><span class="line">&gt;&gt;此次输出的是: <span class="number">4</span></span><br><span class="line">&gt;&gt;此次输出的是: <span class="number">5</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    </span><br><span class="line"><span class="comment"># 打印99乘法表</span></span><br><span class="line">row = <span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> row &lt;= <span class="number">9</span>:</span><br><span class="line">    col = <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> col &lt;= row:</span><br><span class="line">        print(<span class="string">&quot;%d*%d=%d&quot;</span> %(col, row, col*row), end = <span class="string">&quot; &quot;</span>)</span><br><span class="line">        col = col + <span class="number">1</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    print(<span class="string">&quot;&quot;</span>)</span><br><span class="line">    row = row + <span class="number">1</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&gt;&gt;<span class="number">1</span>*<span class="number">1</span>=<span class="number">1</span> </span><br><span class="line">&gt;&gt;<span class="number">1</span>*<span class="number">2</span>=<span class="number">2</span> <span class="number">2</span>*<span class="number">2</span>=<span class="number">4</span> </span><br><span class="line">&gt;&gt;<span class="number">1</span>*<span class="number">3</span>=<span class="number">3</span> <span class="number">2</span>*<span class="number">3</span>=<span class="number">6</span> <span class="number">3</span>*<span class="number">3</span>=<span class="number">9</span> </span><br><span class="line">&gt;&gt;<span class="number">1</span>*<span class="number">4</span>=<span class="number">4</span> <span class="number">2</span>*<span class="number">4</span>=<span class="number">8</span> <span class="number">3</span>*<span class="number">4</span>=<span class="number">12</span> <span class="number">4</span>*<span class="number">4</span>=<span class="number">16</span> </span><br><span class="line">&gt;&gt;<span class="number">1</span>*<span class="number">5</span>=<span class="number">5</span> <span class="number">2</span>*<span class="number">5</span>=<span class="number">10</span> <span class="number">3</span>*<span class="number">5</span>=<span class="number">15</span> <span class="number">4</span>*<span class="number">5</span>=<span class="number">20</span> <span class="number">5</span>*<span class="number">5</span>=<span class="number">25</span> </span><br><span class="line">&gt;&gt;<span class="number">1</span>*<span class="number">6</span>=<span class="number">6</span> <span class="number">2</span>*<span class="number">6</span>=<span class="number">12</span> <span class="number">3</span>*<span class="number">6</span>=<span class="number">18</span> <span class="number">4</span>*<span class="number">6</span>=<span class="number">24</span> <span class="number">5</span>*<span class="number">6</span>=<span class="number">30</span> <span class="number">6</span>*<span class="number">6</span>=<span class="number">36</span> </span><br><span class="line">&gt;&gt;<span class="number">1</span>*<span class="number">7</span>=<span class="number">7</span> <span class="number">2</span>*<span class="number">7</span>=<span class="number">14</span> <span class="number">3</span>*<span class="number">7</span>=<span class="number">21</span> <span class="number">4</span>*<span class="number">7</span>=<span class="number">28</span> <span class="number">5</span>*<span class="number">7</span>=<span class="number">35</span> <span class="number">6</span>*<span class="number">7</span>=<span class="number">42</span> <span class="number">7</span>*<span class="number">7</span>=<span class="number">49</span> </span><br><span class="line">&gt;&gt;<span class="number">1</span>*<span class="number">8</span>=<span class="number">8</span> <span class="number">2</span>*<span class="number">8</span>=<span class="number">16</span> <span class="number">3</span>*<span class="number">8</span>=<span class="number">24</span> <span class="number">4</span>*<span class="number">8</span>=<span class="number">32</span> <span class="number">5</span>*<span class="number">8</span>=<span class="number">40</span> <span class="number">6</span>*<span class="number">8</span>=<span class="number">48</span> <span class="number">7</span>*<span class="number">8</span>=<span class="number">56</span> <span class="number">8</span>*<span class="number">8</span>=<span class="number">64</span> </span><br><span class="line">&gt;&gt;<span class="number">1</span>*<span class="number">9</span>=<span class="number">9</span> <span class="number">2</span>*<span class="number">9</span>=<span class="number">18</span> <span class="number">3</span>*<span class="number">9</span>=<span class="number">27</span> <span class="number">4</span>*<span class="number">9</span>=<span class="number">36</span> <span class="number">5</span>*<span class="number">9</span>=<span class="number">45</span> <span class="number">6</span>*<span class="number">9</span>=<span class="number">54</span> <span class="number">7</span>*<span class="number">9</span>=<span class="number">63</span> <span class="number">8</span>*<span class="number">9</span>=<span class="number">72</span> <span class="number">9</span>*<span class="number">9</span>=<span class="number">81</span> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#打印直角三角形</span></span><br><span class="line">row = <span class="number">9</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> row &gt;= <span class="number">1</span>:</span><br><span class="line">    pattern_num = <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> pattern_num &lt;= row:</span><br><span class="line">        print(<span class="string">&quot;*&quot;</span>, end=<span class="string">&quot; &quot;</span>)</span><br><span class="line">        pattern_num = pattern_num+<span class="number">1</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    print(<span class="string">&quot;&quot;</span>)</span><br><span class="line">    row = row - <span class="number">1</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&gt;&gt;* * * * * * * * * </span><br><span class="line">&gt;&gt;* * * * * * * * </span><br><span class="line">&gt;&gt;* * * * * * * </span><br><span class="line">&gt;&gt;* * * * * * </span><br><span class="line">&gt;&gt;* * * * * </span><br><span class="line">&gt;&gt;* * * * </span><br><span class="line">&gt;&gt;* * * </span><br><span class="line">&gt;&gt;* * </span><br><span class="line">&gt;&gt;*</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 打印等腰三角形</span></span><br><span class="line">row = <span class="number">5</span></span><br><span class="line"><span class="keyword">while</span> row &gt;= <span class="number">1</span>:</span><br><span class="line">    j = <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> j &lt;= row: <span class="comment">#控制打印空格，总行数-所在行=打印的空格数</span></span><br><span class="line">        print(<span class="string">&quot;!&quot;</span>, end = <span class="string">&quot;&quot;</span>)</span><br><span class="line">        j = j+<span class="number">1</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    </span><br><span class="line">    j=<span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> j&lt;=(<span class="number">5</span>-row)*<span class="number">2</span>+<span class="number">1</span>: <span class="comment">#控制打印*，所在行*2-1=*的数量</span></span><br><span class="line">        print(<span class="string">&quot;*&quot;</span>, end = <span class="string">&quot;&quot;</span>)</span><br><span class="line">        j = j+<span class="number">1</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    </span><br><span class="line">    row = row - <span class="number">1</span></span><br><span class="line">    print(<span class="string">&quot;&quot;</span>)</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">&gt;&gt;: <span class="comment">#代表输出</span></span><br><span class="line">!!!!!*</span><br><span class="line">!!!!***</span><br><span class="line">!!!*****</span><br><span class="line">!!*******</span><br><span class="line">!*********       </span><br></pre></td></tr></table></figure>
+<h3 id="三、-for"><a href="#三、-for" class="headerlink" title="三、 for"></a>三、 for</h3><p>遍历操作，依次取集合容器中的每一个值。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> ... <span class="keyword">in</span> 集合对象:   </span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"><span class="comment">#例子1</span></span><br><span class="line">a = <span class="string">&#x27;python&#x27;</span> <span class="comment">#字符串类型本身就是一个字符类型的集合</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> a:</span><br><span class="line">    print(<span class="string">&quot;字母：%s&quot;</span> %(i), end = <span class="string">&quot; &quot;</span>)</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">&gt;&gt;:</span><br><span class="line">字母：p 字母：y 字母：t 字母：h 字母：o 字母：n </span><br><span class="line"></span><br><span class="line"><span class="comment">#range[,) 左闭右开 </span></span><br></pre></td></tr></table></figure>
+<h3 id="四、-break-continue"><a href="#四、-break-continue" class="headerlink" title="四、 break, continue"></a>四、 break, continue</h3><p>只可以用在循环中。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#break 结束本层循环</span></span><br><span class="line"><span class="comment">#continue 结束本次循环，继续下一次循环</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#例子</span></span><br><span class="line"><span class="built_in">sum</span> = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">101</span>):</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">sum</span>&gt;= <span class="number">100</span>:</span><br><span class="line">        print(<span class="string">&quot;求和加到第%d个就结束了，且该数字没有计算进和中。&quot;</span>%i)</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">sum</span> += i</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">print(<span class="string">&quot;sum is:%d&quot;</span>%<span class="built_in">sum</span>)</span><br><span class="line"></span><br><span class="line">&gt;&gt;:</span><br><span class="line">求和加到第<span class="number">15</span>个就结束了，且该数字没有计算进和中。</span><br><span class="line"><span class="built_in">sum</span> <span class="keyword">is</span>:<span class="number">105</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#例子</span></span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> <span class="string">&#x27;I love python&#x27;</span>:</span><br><span class="line">    <span class="keyword">if</span> item == <span class="string">&quot;e&quot;</span>:</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    print(item, end = <span class="string">&quot;&quot;</span>)</span><br><span class="line">&gt;&gt;:</span><br><span class="line">I lov python</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="五、-多条件和短路"><a href="#五、-多条件和短路" class="headerlink" title="五、 多条件和短路"></a>五、 多条件和短路</h3><h2 id="3-Python-数据结构"><a href="#3-Python-数据结构" class="headerlink" title="3. Python 数据结构"></a>3. Python 数据结构</h2><p>Python数据类型：</p>
 <p>基础类型：</p>
 <ol>
 <li>num: int/float/complex/bool</li>
@@ -723,7 +727,7 @@ validation rmse: 0.7063579713283387
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/25/Machine-Learning-Data-Structure-1st/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/25/Explanatory_Data_Analysis/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -737,7 +741,7 @@ validation rmse: 0.7063579713283387
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/11/25/Machine-Learning-Data-Structure-1st/" class="post-title-link" itemprop="url">Machine Learning Data Structure</a>
+            <a href="/2020/11/25/Explanatory_Data_Analysis/" class="post-title-link" itemprop="url">Exploratory Data Analysis</a>
         </h2>
 
         <div class="post-meta">
@@ -746,198 +750,16 @@ validation rmse: 0.7063579713283387
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-11-25 11:10:04 / 修改时间：14:26:55" itemprop="dateCreated datePublished" datetime="2020-11-25T11:10:04+08:00">2020-11-25</time>
+              <time title="创建时间：2020-11-25 11:09:52" itemprop="dateCreated datePublished" datetime="2020-11-25T11:09:52+08:00">2020-11-25</time>
             </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="一、机器学习"><a href="#一、机器学习" class="headerlink" title="一、机器学习"></a>一、机器学习</h1><p>中心极限定理CLT</p>
-<p>随机变量序列部分和渐进于正态分布</p>
-<h2 id="1-Train-Validation-Test"><a href="#1-Train-Validation-Test" class="headerlink" title="1. Train/Validation/Test"></a>1. Train/Validation/Test</h2><p>一个数据集合，可以划分为train data set, validation data set, test data set.</p>
-<p>1）其中train用来训练模型，比如你可以得到由10个方法SVM, linear regression, regression tree等等所对应的10个模型，并且这时候你已经对参数进行了调整，以求达到一个非常好的效果。每个model你有各自对应的10组Parameters，那么就有100个训练出来的模型。</p>
-<p>2）此时你要评估一下各自的效果，防止over fit，当然，under fit也是可以防止的，但是模型选择的时候，大家都是往精度高了的模型选择，极少出现选择under fit的模型。这个时候，帮你从100个model中选出来你认为表现最好的1个model，当然实际上你可以选择几个，当作待选的模型。并且通过train error和validation error的对比，大概可以找到那个u-shape的最低点。选择那个时候的model。</p>
-<p>3）test只用来测试模型，来看这个模型究竟有多好，就是评价这个模型的泛化能力（generalization）。 这时候，这个model在test上得到的accuracy就是一个很有代表性（representative）的accuracy，以后再在新的数据集上测试时，一般来说是跑不离这个精度的范围的。</p>
-<p>此时你通过1和2的反复使用，最终选择了几个模型，可能是完全不同的Linear，SVM，也可能是一个Linear对应的两组模型。总之，你得到了最终的几个模型，并且给出了他们的泛化能力，最终选择哪个，看决策者了。</p>
-<h2 id="2-Introduction"><a href="#2-Introduction" class="headerlink" title="2. Introduction"></a>2. Introduction</h2><p>机器学习的分类：监督学习和非监督学习</p>
-<p>监督学习又分为：==regression==和==classification==。当然也可以分为prediction和inference两种。前者注重依靠现有数据，对将来可能发生的情况进行预测；后者注重研究哪些factor对response variable有重大影响。</p>
-<p>非监督学习：discovering clusters和discovering latent factors</p>
-<ol>
-<li>linear regression: if data is from normal distribution, since y = $w^{T}x$ + $\epsilon$ is from $N(w^{T}x, \sigma^{2})$, then OLS = MLE. </li>
-</ol>
-<ol>
-<li>nonlinear regression:多项式/regression tree/kernel machines(radial basis function/logistic sigmoid)</li>
-</ol>
-<p>Note: pandas.dataframe是二维的，pandas.series是一维的</p>
-<p>由给定样本集合求解随机变量的分布密度函数问题是概率统计学的基本问题之一。解决这一问题的方法包括参数估计和非参数估计。</p>
-<p>如果反过来，就需要使用Metropolis-Hastings and Gibbs Sampling</p>
-<p>参数估计：Maximum Likelihood Estimation(MLE)</p>
-<p>非参数估计：Kernel density estimation(KDE)，由数据到分布。不平滑内核，平滑内核。</p>
-<p>一般使用高斯内核，是平滑的。</p>
-<p>平均积分平方误差的大小来确定带宽h。</p>
-<p>pdf比较平坦，则选择较大的h，反之就选择较小的h。</p>
-<h2 id="4-Classification"><a href="#4-Classification" class="headerlink" title="4. Classification"></a>4. Classification</h2><p>the type of the response variable are qualitative/categorical</p>
-<p>the method is called classification</p>
-<p>通常first predict the probability of each of the categories of a qualitative variable</p>
-<ol>
-<li>Logistic Regression</li>
-<li>Linear discriminant analysis</li>
-<li>K-nearest neightbours</li>
-</ol>
-<p>The following are computer-intensive</p>
-<ol>
-<li>Generalized Additive Models</li>
-<li>Trees</li>
-<li>SVM</li>
-</ol>
-<p>问题：依据predictor/feature，判断储户是否会default<code>逾期</code>不还欠款。</p>
-<p>X1: balance</p>
-<p>X2: income</p>
-<p>==Note:== If taking some diseases as examples,  an-made ordinal variable implies an ordering on the outcomes or predictors, </p>
-<p>and insist on the difference between some of them are equal and some are not 实际上这是不对的，人为构造顺序关系更容易引入误差</p>
-<p>$Pr(default = Yes|balance)$</p>
-<p>In fact, there is another variable income, but it seems less relative</p>
-<p>the probability for default = Yes(y = 1), if the bank is conservative, the threshold could be lower, such as threshold = 0.1</p>
-<script type="math/tex; mode=display">
-p(X) = \frac{e^{g(X)}}{1+e^{g(X)}}</script><p>Method: MLE</p>
-<p>log-odds/logit</p>
-<p>In fact, every training has an estimated coef, Std.error, Z-statistic and P-value</p>
-<p>A low P-value means we should include the predictor</p>
-<script type="math/tex; mode=display">
-log(\frac{p(X)}{1-p(X)})=\beta_{0}+\beta_{1}X_{1}+...+\beta_{p}X_{p}</script><p>其中具有2个离散值的predictors，是可以使用dummy variable的</p>
-<p>==Note==那么具有多个离散值的predictors呢？</p>
-<p>很经典的问题，如果考虑是否具有student这个身份。同等balance情况下，student不会default。但是总体来说student和balance正相关，student往往具有更高的balance因而更容易default</p>
-<p>2 Response Classes</p>
-<h3 id="4-2-LDA"><a href="#4-2-LDA" class="headerlink" title="4.2 LDA"></a>4.2 LDA</h3><ol>
-<li>当数据实际well-separated时，LR不稳定</li>
-<li>样本量小的时候，X is approximately normal in each of the classes, LDA更稳定</li>
-<li>在More classes表现更好</li>
-</ol>
-<script type="math/tex; mode=display">
-f_{k}(X) = Pr(X=x|Y=k)\\
-Pr(Y=k|X=x) = \frac{\pi_{k}f_{k}(x)}{\sum_{l=1}^{K}\pi_{l}f_{l}(x)}</script><p>$\pi_{k}$=k类样本数量/总样本数</p>
-<h1 id="二、-算法和他们的目的"><a href="#二、-算法和他们的目的" class="headerlink" title="二、 算法和他们的目的"></a>二、 算法和他们的目的</h1><h3 id="1-EM-Expectation-and-Maximum"><a href="#1-EM-Expectation-and-Maximum" class="headerlink" title="1. EM(Expectation and Maximum)"></a>1. EM(Expectation and Maximum)</h3><p>估计参数值</p>
-<ol>
-<li>求期望</li>
-<li>期望最大</li>
-<li>重复上述两步直至收敛</li>
-</ol>
-<h3 id="2-MLE-Maximum-Likelihood-Estimate"><a href="#2-MLE-Maximum-Likelihood-Estimate" class="headerlink" title="2. MLE(Maximum Likelihood Estimate)"></a>2. MLE(Maximum Likelihood Estimate)</h3><p>估计参数值</p>
-<ol>
-<li>写出似然函数</li>
-<li>求出使似然函数最大的参数取值</li>
-</ol>
-<h3 id="3-HMM-Hidden-Markov-Model"><a href="#3-HMM-Hidden-Markov-Model" class="headerlink" title="3. HMM(Hidden Markov Model)"></a>3. HMM(Hidden Markov Model)</h3><p>求概率</p>
-<ol>
-<li>状态序列</li>
-<li>观测序列</li>
-</ol>
-<h3 id="4-MICE-Multiple-Imputation-and-Chained-Equations"><a href="#4-MICE-Multiple-Imputation-and-Chained-Equations" class="headerlink" title="4. MICE(Multiple Imputation and Chained Equations)"></a>4. MICE(Multiple Imputation and Chained Equations)</h3><p>填补缺失值</p>
-<ol>
-<li>impute</li>
-<li>analyse</li>
-<li>pool</li>
-</ol>
-<h3 id="5-Metropolis-Hastings-amp-Gibbs-Sampling"><a href="#5-Metropolis-Hastings-amp-Gibbs-Sampling" class="headerlink" title="5. Metropolis Hastings &amp; Gibbs Sampling"></a>5. Metropolis Hastings &amp; Gibbs Sampling</h3><p>已知函数分布，从中进行采样。</p>
-<h3 id="6-KDE-Kernel-Density-Estimation"><a href="#6-KDE-Kernel-Density-Estimation" class="headerlink" title="6. KDE(Kernel Density Estimation)"></a>6. KDE(Kernel Density Estimation)</h3><p>估计样本分布</p>
-<h3 id="7-退火SA-爬山CH"><a href="#7-退火SA-爬山CH" class="headerlink" title="7. 退火SA/爬山CH"></a>7. 退火SA/爬山CH</h3><h3 id="8-梯度下降且采用一阶导数-Gradient-Descent-GD采用二阶导数-Newton-Raphson"><a href="#8-梯度下降且采用一阶导数-Gradient-Descent-GD采用二阶导数-Newton-Raphson" class="headerlink" title="8. 梯度下降且采用一阶导数 Gradient Descent/GD采用二阶导数 Newton-Raphson"></a>8. 梯度下降且采用一阶导数 Gradient Descent/GD采用二阶导数 Newton-Raphson</h3><h1 id="三、数据结构"><a href="#三、数据结构" class="headerlink" title="三、数据结构"></a>三、数据结构</h1><h2 id="1-绪论：数据的概念-逻辑结构与物理结构"><a href="#1-绪论：数据的概念-逻辑结构与物理结构" class="headerlink" title="1. 绪论：数据的概念/逻辑结构与物理结构"></a>1. 绪论：数据的概念/逻辑结构与物理结构</h2><ol>
-<li><p>逻辑结构：集合结构/线性结构/树形结构/图形结构</p>
-</li>
-<li><p>物理结构：顺序存储结构 vs. 链式存储结构</p>
-</li>
-</ol>
-<h2 id="2-算法-时间复杂度与空间复杂度"><a href="#2-算法-时间复杂度与空间复杂度" class="headerlink" title="2. 算法/时间复杂度与空间复杂度"></a>2. 算法/时间复杂度与空间复杂度</h2><p>算法：解决特定问题求解步骤的描述</p>
-<p>算法的特性：输入，输出，有穷性，确定性，可行性</p>
-<p>时间复杂度—比较容易理解:</p>
-<ol>
-<li><p>$O(1)$ constant​</p>
-</li>
-<li><p>$O(n)$ power </p>
-</li>
-<li><p>$O(log_{10}n)$ logarithm</p>
-</li>
-</ol>
-<p>线性表，顺序存储结构。</p>
-<p>链式存储结构。 数据域，指针域。相比较于线性表，减少了增删的时间复杂度，增加了查询的时间复杂度。</p>
-<h2 id="3-线性表：顺序存储-链式存储：单链表（着重）、循环链表、静态链表、双向链表"><a href="#3-线性表：顺序存储-链式存储：单链表（着重）、循环链表、静态链表、双向链表" class="headerlink" title="3. 线性表：顺序存储/链式存储：单链表（着重）、循环链表、静态链表、双向链表"></a>3. 线性表：顺序存储/链式存储：单链表（着重）、循环链表、静态链表、双向链表</h2><h2 id="4-栈（顺序与链式）：先进后出-队列（顺序与循环）：先进先出"><a href="#4-栈（顺序与链式）：先进后出-队列（顺序与循环）：先进先出" class="headerlink" title="4. 栈（顺序与链式）：先进后出/队列（顺序与循环）：先进先出"></a>4. 栈（顺序与链式）：先进后出/队列（顺序与循环）：先进先出</h2><h2 id="5-串-简单的模式匹配-KMP算法"><a href="#5-串-简单的模式匹配-KMP算法" class="headerlink" title="5. 串/简单的模式匹配/KMP算法"></a>5. 串/简单的模式匹配/KMP算法</h2><h2 id="6-树"><a href="#6-树" class="headerlink" title="6. 树"></a>6. 树</h2><p>一些概念：</p>
-<p>度degree/深度depth/有序性和无序性</p>
-<p>存储结构用顺序存储比较困难。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">graph TD</span><br><span class="line"></span><br><span class="line">树的存储结构 --&gt; 双亲表示法</span><br><span class="line">树的存储结构 --&gt; 孩子表示法</span><br><span class="line">树的存储结构 --&gt; 兄弟表示法</span><br><span class="line">兄弟表示法 --&gt; 二叉树的概念</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>二叉树是有序的。</p>
-<p>二叉树的存储结构。</p>
-<p>因为二叉树比较特殊，所以使用顺序存储也有了可能。</p>
-<p>遍历二叉树。</p>
-<p>前序遍历/中序遍历/后序遍历/层序遍历</p>
-<p>前三种遍历方式，本质上也是一种递归。</p>
-<p>print/访问左节点/访问右节点。这是前序遍历</p>
-<p>访问左节点，print，访问右节点，这是中序。</p>
-<p>访问左节点，访问右节点，print，这是后序遍历。</p>
-<p>那么二叉树的建立，就可以参照他的遍历方式。只不过把print变成赋值。</p>
-<p>树，森林，二叉树的转换。</p>
-<p>赫夫曼树：带权路径长度WPL最小的二叉树。 weighted path length?</p>
-<p>树的路径长度，权重</p>
-<p>赫夫曼编码</p>
-<h2 id="7-图"><a href="#7-图" class="headerlink" title="7. 图"></a>7. 图</h2><h2 id="9-排序算法"><a href="#9-排序算法" class="headerlink" title="9. 排序算法"></a>9. 排序算法</h2><ol>
-<li>冒泡排序</li>
-<li>简单选择排序</li>
-<li>直接插入排序</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/25/Exploratory-Data-Analysis-1st/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Yulin Wang">
-      <meta itemprop="description" content="要讲武德，要努力学习。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="浑元形意太极门大弟子">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/11/25/Exploratory-Data-Analysis-1st/" class="post-title-link" itemprop="url">Exploratory Data Analysis</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-12-03 15:12:06" itemprop="dateModified" datetime="2020-12-03T15:12:06+08:00">2020-12-03</time>
               </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-11-25 11:09:52 / 修改时间：14:24:28" itemprop="dateCreated datePublished" datetime="2020-11-25T11:09:52+08:00">2020-11-25</time>
-            </span>
 
           
 
@@ -1223,7 +1045,7 @@ Pr(Y=k|X=x) = \frac{\pi_{k}f_{k}(x)}{\sum_{l=1}^{K}\pi_{l}f_{l}(x)}</script><p>$
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
