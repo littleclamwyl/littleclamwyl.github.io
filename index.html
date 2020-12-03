@@ -148,7 +148,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/12/02/Python-Basic-Commands/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/12/02/Python_Learning/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -162,7 +162,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/12/02/Python-Basic-Commands/" class="post-title-link" itemprop="url">Python Basic Commands</a>
+            <a href="/2020/12/02/Python_Learning/" class="post-title-link" itemprop="url">Python Basic Commands</a>
         </h2>
 
         <div class="post-meta">
@@ -171,10 +171,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-12-02 10:38:23 / 修改时间：10:38:45" itemprop="dateCreated datePublished" datetime="2020-12-02T10:38:23+08:00">2020-12-02</time>
+              <time title="创建时间：2020-12-02 10:38:23" itemprop="dateCreated datePublished" datetime="2020-12-02T10:38:23+08:00">2020-12-02</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-12-03 15:09:16" itemprop="dateModified" datetime="2020-12-03T15:09:16+08:00">2020-12-03</time>
+              </span>
 
           
 
@@ -187,7 +193,67 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>具体内容，请稍后。</p>
+          <h2 id="1-Python-基本知识"><a href="#1-Python-基本知识" class="headerlink" title="1. Python 基本知识"></a>1. Python 基本知识</h2><h3 id="一、-优缺点和特点"><a href="#一、-优缺点和特点" class="headerlink" title="一、 优缺点和特点"></a>一、 优缺点和特点</h3><p>代码-&gt;翻译-&gt;机器语言010101</p>
+<p>优点：</p>
+<p>开源</p>
+<p>丰富的第三方库：</p>
+<p>web开发-&gt;django/flask/tornado</p>
+<p>爬虫-&gt;scrapy</p>
+<p>数据分析-&gt;numpy/pandas/scikit-learn</p>
+<p>缺点：</p>
+<p>GIL全局解释器锁</p>
+<p>解释语言（Python）-&gt;解释器-&gt;CPU</p>
+<p>编译语言（C）-&gt;CPU-&gt;运行速度更快</p>
+<h3 id="二、-注释"><a href="#二、-注释" class="headerlink" title="二、 注释"></a>二、 注释</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#这是单行注释</span></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27; </span></span><br><span class="line"><span class="string">多行注释</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#特殊注释</span></span><br><span class="line"><span class="comment">#1.针对Linux</span></span><br><span class="line"><span class="comment">#指定Python的解析器路径</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#2.编码注释</span></span><br><span class="line"><span class="comment">#coding = utf-8 </span></span><br></pre></td></tr></table></figure>
+<p>ASCII最大字符数256 -&gt; UNICODE 65536个字符，可以包含所有语言的所有字符，就不会乱码了。</p>
+<p>UNICODE只规定了每个字符的数字编码，但没有规定这个字符如何存储。</p>
+<ol>
+<li><p>utf-8/utf-16/utf-32是Unicode的一种具体实现</p>
+</li>
+<li><p>gbk是中文编码</p>
+</li>
+</ol>
+<p>数据结构 + 算法 = 程序</p>
+<p>变量：一段有名字的连续存储空间</p>
+<p>可以通过定义变量来申请并命名这样的存储空间。</p>
+<p>Python是强类型的数据，不需要定义变量的类型。赋值是什么类型的数据，变量就是什么类型的。</p>
+<h3 id="三、-基本操作符"><a href="#三、-基本操作符" class="headerlink" title="三、 基本操作符"></a>三、 基本操作符</h3><p><strong>注意优先级顺序：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 算术运算符</span></span><br><span class="line">+ <span class="comment">#加</span></span><br><span class="line">- <span class="comment">#减</span></span><br><span class="line">* <span class="comment">#乘</span></span><br><span class="line">/ <span class="comment">#除</span></span><br><span class="line">** <span class="comment">#指数</span></span><br><span class="line">% <span class="comment">#求余数</span></span><br><span class="line">// <span class="comment">#求商去除余数</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 比较运算符</span></span><br><span class="line">== </span><br><span class="line">!=</span><br><span class="line">&gt;</span><br><span class="line">&lt; </span><br><span class="line">&gt;=</span><br><span class="line">&lt;=</span><br><span class="line"></span><br><span class="line"><span class="comment"># 逻辑运算符</span></span><br><span class="line"><span class="keyword">and</span></span><br><span class="line"><span class="keyword">or</span></span><br><span class="line"><span class="keyword">not</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 赋值运算符</span></span><br><span class="line">=</span><br><span class="line">+=</span><br><span class="line">...</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="四、-格式化输入和输出"><a href="#四、-格式化输入和输出" class="headerlink" title="四、 格式化输入和输出"></a>四、 格式化输入和输出</h3><p><strong>注意</strong>： 前后的个数一致</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 输出</span></span><br><span class="line"><span class="comment"># %占位符</span></span><br><span class="line">name = <span class="string">&#x27;Little&#x27;</span></span><br><span class="line">classPro = <span class="string">&#x27;Class 1&#x27;</span> </span><br><span class="line"></span><br><span class="line"><span class="comment"># 第一种 %d, %s %()</span></span><br><span class="line">print(<span class="string">&quot;我的名字是: %s 来自【%s】&quot;</span> %(name, classPro))</span><br><span class="line">&gt;&gt;我的名字是: Little 来自【Class <span class="number">1</span>】</span><br><span class="line">    </span><br><span class="line"><span class="comment"># 第二种 &#123;&#125; .format()</span></span><br><span class="line">print(<span class="string">&quot;姓名:&#123;&#125;&quot;</span>.<span class="built_in">format</span>(name))</span><br><span class="line">&gt;&gt;姓名:Little</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    </span><br><span class="line"><span class="comment"># 输入    </span></span><br><span class="line"><span class="comment"># input</span></span><br><span class="line"><span class="comment"># 类型都是str</span></span><br><span class="line">name = <span class="built_in">input</span>(<span class="string">&quot;请输入你的姓名：&quot;</span>)</span><br><span class="line">Number = <span class="built_in">input</span>(<span class="string">&quot;请输入你的电话：&quot;</span>)</span><br><span class="line">&gt;&gt;请输入你的姓名：Little</span><br><span class="line">&gt;&gt;请输入你的电话：</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="2-Python-判断语句和流程控制"><a href="#2-Python-判断语句和流程控制" class="headerlink" title="2. Python 判断语句和流程控制"></a>2. Python 判断语句和流程控制</h2><p>流程：计算机执行代码的顺序</p>
+<p>流程控制：对计算机代码执行的顺序进行有效的管理</p>
+<p>流程控制的分类：</p>
+<ol>
+<li><p>顺序 </p>
+</li>
+<li><p>循环</p>
+</li>
+<li><p>判断/选择</p>
+</li>
+</ol>
+<h3 id="一、-if-else"><a href="#一、-if-else" class="headerlink" title="一、 if-else"></a>一、 if-else</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 判断/选择</span></span><br><span class="line"><span class="comment">#1. 单分支</span></span><br><span class="line"><span class="keyword">if</span> 条件表达式:</span><br><span class="line">    ...</span><br><span class="line"><span class="comment">#2. 双分支</span></span><br><span class="line"><span class="keyword">if</span> 条件表达式:</span><br><span class="line">    ...</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    ...</span><br><span class="line">    </span><br><span class="line"><span class="comment">#3. 多分支</span></span><br><span class="line"><span class="keyword">if</span> 条件表达式:</span><br><span class="line">    ...</span><br><span class="line">       </span><br><span class="line"><span class="keyword">elif</span> 条件表达式:</span><br><span class="line">    ...</span><br><span class="line">       </span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#例子1</span></span><br><span class="line">Score = <span class="number">87</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> Score &lt;= <span class="number">60</span>:</span><br><span class="line">    print(<span class="string">&quot;继续努力。&quot;</span>)</span><br><span class="line">    <span class="keyword">pass</span> <span class="comment">#空语句</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">&quot;干的不错。&quot;</span>)</span><br><span class="line">print(<span class="string">&quot;语句运行结束。&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#例子2</span></span><br><span class="line">Score = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;请输入您的成绩：&quot;</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> Score &lt;= <span class="number">60</span>:</span><br><span class="line">    print(<span class="string">&quot;继续努力。&quot;</span>)</span><br><span class="line">    <span class="keyword">pass</span> <span class="comment">#空语句</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">elif</span> Score &gt; <span class="number">80</span>:</span><br><span class="line">    print(<span class="string">&quot;做得很好，继续保持。&quot;</span>)</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">&quot;干的不错。&quot;</span>)</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">&gt;&gt;请输入您的成绩：<span class="number">55</span></span><br><span class="line">&gt;&gt;继续努力。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#嵌套</span></span><br><span class="line"><span class="keyword">if</span> 条件<span class="number">1</span>:</span><br><span class="line">    <span class="keyword">if</span> 条件<span class="number">2</span>:</span><br><span class="line">        print(<span class="string">&quot;满足条件1，满足条件2&quot;</span>)</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(<span class="string">&quot;满足条件1，不满足条件2&quot;</span>)</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">&quot;不满足条件1&quot;</span>)</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>条件表达式：比较表达式/逻辑表达式/符合表达式</p>
+<h3 id="二、-while"><a href="#二、-while" class="headerlink" title="二、 while"></a>二、 while</h3><ol>
+<li>有初始值</li>
+<li>有条件表达式</li>
+<li>自增变量/自减【循环体内计数变量】，否则会死循环</li>
+</ol>
+<p>特点：循环的次数不确定，是依靠循环条件结束。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">while 条件表达式:</span><br><span class="line">    ...</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">for ... in 集合对象:    </span><br><span class="line">    </span><br><span class="line">  </span><br></pre></td></tr></table></figure>
+<h3 id="三、-for"><a href="#三、-for" class="headerlink" title="三、 for"></a>三、 for</h3><h3 id="四、-break-continue"><a href="#四、-break-continue" class="headerlink" title="四、 break, continue"></a>四、 break, continue</h3><h3 id="五、-多条件和短路"><a href="#五、-多条件和短路" class="headerlink" title="五、 多条件和短路"></a>五、 多条件和短路</h3><h2 id="3-Python-数据结构"><a href="#3-Python-数据结构" class="headerlink" title="3. Python 数据结构"></a>3. Python 数据结构</h2><p>Python数据类型：</p>
+<p>基础类型：</p>
+<ol>
+<li>num: int/float/complex/bool</li>
+<li>str</li>
+</ol>
+<p>高级类型（数据结构）：</p>
+<ol>
+<li>dict 字典</li>
+<li>tuple 元组</li>
+<li>list 列表</li>
+<li>set 集合</li>
+</ol>
 
       
     </div>
